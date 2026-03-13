@@ -47,6 +47,7 @@ import Header from "../../header/Header";
 // import Scene from "../status/operatingParameters/Scene";
 // import ModelViewer from "../status/operatingParameters/ModelViewer";
 import assetData from "../../../Assets.json";
+import Report from "./report";
 
 function SensorLayout() {
   const [workshopData, setworkshopData] = useState();
@@ -56,6 +57,7 @@ function SensorLayout() {
   const [TrendPopupshow, setTrendPopupshow] = useState(false);
   const [isPopupOpenSuperVisor, setIsPopupOpenSuperVisor] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [reportpopup, setreportpopup] = useState(false)
   const {
     sensorThresholdData,
     setsensorThresholdData,
@@ -83,6 +85,11 @@ function SensorLayout() {
   const handleRangeDE = () => {
     setRangeForDE(true);
   };
+
+  const handlereport = () => {
+    setreportpopup(true)
+  }
+
 
   const handleRangeNDE = () => {
     setRangeForNDE(true);
@@ -409,6 +416,17 @@ function SensorLayout() {
                 <LuSettings2 color="white" size={15} className="mr-2" />
                 Threshold
               </div>
+               <div
+                className={`px-4 lg:px-8 py-1 rounded-md text-xs bg-black text-white flex items-center cursor-pointer `}
+                onClick={handlereport}
+              >
+                <IoSettings
+                  color={`${DiagnosisOpen ? "black" : "white"}`}
+                  size={15}
+                  className="mr-2"
+                />
+                Report
+              </div> 
               {/* <div
               className="bg-black text-white px-4 lg:px-8 py-1 rounded-md text-xs flex items-center cursor-pointer"
               onClick={handleOpenServicePopup}
@@ -769,6 +787,11 @@ function SensorLayout() {
             asset_id={asset_id}
           />
         )}
+        {
+          reportpopup && (
+            <Report sensorId={sensor_id} onClose={() => { setreportpopup(false) }}/>
+          )
+        }
       </div>
     </>
   );

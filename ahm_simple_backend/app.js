@@ -5,7 +5,7 @@ import initsocket from "./socket.js";
 const app = express();
 import { configDotenv } from "dotenv";
 import morgan from "morgan";
-import { fetchThresholdController, totalRuntimeCSV, updateThresholdController } from "./fetchthresold.controller.js";
+import { fetchThresholdController, getLatestCSVRows, totalRuntimeCSV, updateThresholdController } from "./fetchthresold.controller.js";
 import saveTopicsToCSV from "./mqtt_to_csv.js";
 import topics from "./topics.config.js";
 const socketserver = http.createServer(app);
@@ -44,6 +44,7 @@ app.get("/", (req, res) => {
 app.post("/company/thresolddata",fetchThresholdController);
 app.post("/company/updatethresold/:sensor_id",updateThresholdController);
 app.post("/company/totalruntimes/:sensor_id",totalRuntimeCSV);
+app.post("/company/getlatestcsvrows/:sensor_id",getLatestCSVRows);
 
 socketserver.listen(port, () => {
     saveTopicsToCSV(topics);

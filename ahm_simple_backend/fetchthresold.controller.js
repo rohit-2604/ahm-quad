@@ -204,3 +204,57 @@ export const totalRuntimeCSV = async (req, res) => {
     });
   }
 };
+
+export const getLatestCSVRows =async (req, res) => {
+  try {
+    const sensorID = req.params.sensor_id;
+
+    const filePath = path.join(process.cwd(), "data", `${sensorID}.csv`);
+
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({
+        success: false,
+        message: "CSV file not found",
+      });
+    }
+
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    const lines = fileContent.trim().split("\n");
+
+    const header = lines[0].split(",");
+
+    // remove device_id column
+    const filteredHeader = header.filter(col => col !== "device_id");
+
+    const latestRows = lines.slice(-100);
+
+    const result = {};
+    filteredHeader.forEach(col => {
+      result[col] = [];
+    });
+
+    latestRows.forEach(line => {
+      const values = line.split(",");
+
+      header.forEach((col, index) => {
+        if (col !== "device_id") {
+          result[col].push(values[index]);
+        }
+      });
+    });
+
+    return res.status(200).json({
+      success: true,
+      message: "Latest 100 records fetched",
+      data: result
+    });
+
+  } catch (error) {
+    console.error("CSV fetch error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error"
+    });
+  }
+};
