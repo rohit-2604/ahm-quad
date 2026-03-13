@@ -1,0 +1,7 @@
+.popupopened {
+    height: 200px ;
+    width: 500px;
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    transition-duration: 0.4s !important;
+}

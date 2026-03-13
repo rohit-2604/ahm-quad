@@ -1,0 +1,62 @@
+{
+  "assets":[
+        {
+            "asset_id": "ins_kgb11hli9a4c_ns",
+            "asset_name": "Motor1",
+            "asset_type": "Motor",
+            "site": "INS-IEMA",
+            "application": "Motor1",
+            "asset_image": "https://res.cloudinary.com/durfyg4h8/image/upload/v1725949651/xuht3pq6g8x3hbqkrkwl.png",
+            "asset_description": "IEMA-601-4-011-NDE\nIEMA-601-4-002-DE",
+            "asset_class": "Class B",
+            "asset_pin": false,
+            "sensors": [
+                {
+                    "sensor_id": "IEMAA-IEMA-601-4-003",
+                    "sensor_type": "NDE",
+                    "sensor_description": "IEMAA-IEMA-601-4-003",
+                    "asset_id_fk": "ins_kgb11hli9a4c_ns",
+                    "sensor_frequency": 50
+                },
+                {
+                    "sensor_id": "IEMAA-IEMA-601-4-005",
+                    "sensor_type": "DE",
+                    "sensor_description": "IEMAA-IEMA-601-4-005",
+                    "asset_id_fk": "ins_kgb11hli9a4c_ns",
+                    "sensor_frequency": 50
+                }
+            ]
+        },
+
+
+
+{
+            "asset_id": "ins_kgb11hli9a4c_ns2",
+            "asset_name": "Motor2",
+            "asset_type": "Motor",
+            "site": "INS-IEMA",
+            "application": "Motor2",
+            "asset_image": "https://res.cloudinary.com/durfyg4h8/image/upload/v1725949651/xuht3pq6g8x3hbqkrkwl.png",
+            "asset_description": "IEMA-601-4-011-NDE\nIEMA-601-4-002-DE",
+            "asset_class": "Class B",
+            "asset_pin": false,
+            "sensors": [
+                {
+                    "sensor_id": "IEMAA-IEMA-601-4-009",
+                    "sensor_type": "NDE",
+                    "sensor_description": "IEMAA-IEMA-601-4-009",
+                    "asset_id_fk": "ins_kgb11hli9a4c_ns2",
+                    "sensor_frequency": 50
+                },
+                {
+                    "sensor_id": "IEMAA-IEMA-601-4-010",
+                    "sensor_type": "DE",
+                    "sensor_description": "IEMAA-IEMA-601-4-010",
+                    "asset_id_fk": "ins_kgb11hli9a4c_ns2",
+                    "sensor_frequency": 50
+                }
+            ]
+        }
+
+    ]
+}

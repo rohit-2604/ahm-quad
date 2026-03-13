@@ -1,0 +1,78 @@
+/* Calendar container with light background and subtle shadow */
+.react-datepicker {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  /* Header with a lighter shade and soft text */
+  .react-datepicker__header {
+    background-color: #f9fafb;
+    color: #374151;
+    font-weight: 500;
+    border-bottom: none;
+  }
+  
+  /* Style the navigation buttons (next/previous month) */
+  .react-datepicker__navigation--next,
+  .react-datepicker__navigation--previous {
+    top: 20px;
+  }
+  
+  .react-datepicker__navigation-icon::before {
+    border-color: #9ca3af;
+  }
+  
+  /* Days with subtle hover effect and rounded corners */
+  .react-datepicker__day {
+    color: #374151;
+    padding: 8px;
+    margin: 2px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .react-datepicker__day:hover {
+    background-color: #f3f4f6;
+  }
+  
+  /* Styling for the selected day and date range */
+  .react-datepicker__day--selected,
+  .react-datepicker__day--in-range {
+    background-color: #60a5fa;
+    color: white;
+  }
+  
+  .react-datepicker__day--selected:hover {
+    background-color: #3b82f6;
+  }
+  
+  /* Highlight the current day with a border */
+  .react-datepicker__day--today {
+    border: 1px solid #60a5fa;
+    background-color: #f3f4f6;
+    color: #2563eb;
+  }
+  
+  /* Month dropdown and year dropdown styles */
+  .react-datepicker__month-dropdown,
+  .react-datepicker__year-dropdown {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Focused day (keyboard focus) */
+  .react-datepicker__day--keyboard-selected {
+    background-color: #60a5fa;
+    color: white;
+  }
+  
+  /* Custom styles for the outside days (from previous/next month) */
+  .react-datepicker__day--outside-month {
+    color: #9ca3af;
+  }
+  

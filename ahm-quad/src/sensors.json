@@ -1,0 +1,12 @@
+{
+  "sensors": [
+    {
+      "sensor_id": "IEMAA-IEMA-601-4-003",
+      "sensor_type": "DE",
+      "sensor_frequency": 50,
+      "asset_id_fk": "Bhila_kgb11hli9a4c_Bhila",
+      "sensor_description": "IEMAA-IEMA-601-4-003"
+    }
+ 
+  ]
+}
